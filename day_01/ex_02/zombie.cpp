@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 16:41:00 by eliott            #+#    #+#             */
-/*   Updated: 2021/02/17 12:39:52 by edepauw          ###   ########lyon.fr   */
+/*   Created: 2021/02/17 12:34:17 by edepauw           #+#    #+#             */
+/*   Updated: 2021/02/17 14:04:57 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
 
-Pony::Pony(void): name("jean"), height(12), age(3), color("grey"), gender("male")
+Zombie::Zombie(std::string name, std::string type): name(name), type(type)
 {
 
 }
 
-Pony::Pony(std::string name, int height, int age, std::string color, std::string gender): name(name), height(height), age(age), color(color), gender(gender)
+Zombie::~Zombie( void )
 {
-
+	
 }
 
-Pony::~Pony( void )
+void Zombie::advert( void )
 {
-	std::cout << this->name << " just died." << std::endl;
+	std::cout << "<" <<this->name << " (" << this->type << ")>" << " BRAAAAAAAAIIINS.." << std::endl;
+}
+void Zombie::announce( void )
+{
+	std::cout << "<" <<this->name << " (" << this->type << ")>" << " BRAAAAAAAAIIINS.." << std::endl;
 }
 

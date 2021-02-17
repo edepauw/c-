@@ -2,7 +2,7 @@
 
 Contact::Contact(void): firstName(""), lastName(""), nickname(""), login(""),
 			postalAdress(""), emailAdress(""), phoneNumber(""),
-			birthdayDate(""), favoriteMeal(""), underwearColor("underwearColor"),
+			birthdayDate(""), favoriteMeal(""), underwearColor(""),
 			darkestSecret("")
 {this->is_filled = 0;}
 

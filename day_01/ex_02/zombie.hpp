@@ -1,35 +1,30 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Poney.class.hpp                                  :+:      :+:    :+:   */
+/*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 16:38:51 by eliott            #+#    #+#             */
-/*   Updated: 2020/07/19 16:07:23 by eliott           ###   ########lyon.fr   */
+/*   Created: 2021/02/17 12:40:59 by edepauw           #+#    #+#             */
+/*   Updated: 2021/02/17 13:02:00 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PONY_HPP
-# define PONY_HPP
 
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <iostream>       // std::cout
 #include <string>         // std::string
 #include <locale>         // std::locale, std::toupper
 
-class Pony {
+class Zombie{
 
 	public:
-
-		Pony(std::string name, int height, int age, std::string color, std::string gender);
-		~Pony( void );
+		Zombie(std::string name, std::string type);
+		~Zombie( void );
+        void advert( void );
 		std::string	name;
-		int		height;
-		int		age;
-		std::string color;
-		std::string gender;
-		Pony( void );
+		std::string type;
 
 };
 
