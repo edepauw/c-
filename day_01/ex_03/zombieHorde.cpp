@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieEvent.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombieEvent.hpp"
-
-void ZombieEvent::setZombieType( std::string type)
+#include "zombieHorde.hpp"
+ZombieHorde::ZombieHorde(int n):n(n)
 {
-	this->type = type;
+	this->horde = new Zombie[n];
 }
 
-Zombie *  ZombieEvent::newZombie(std::string name)
+void ZombieHorde::announce(void)
 {
-	Zombie * zomb = new Zombie(name, this->type);
-	return zomb;
+	int i;
+
+	i = 0;
+	while (i < this->n)
+	{
+		this->horde[i].announce();
+		i++;
+	}
+}
+
+ZombieHorde::~ZombieHorde(void)
+{
+	delete[] this->horde;
 }
 
 
-Zombie *  ZombieEvent::RandomChump( void )
-{
-	srand(time(0));
-	std::string names[10] = {"Jean", "Bizon", "Lara", "Maxime", "Francois", "Pichon", "Thomas", "Juan", "Jacques", "Franck"};
-	Zombie *zomb = new Zombie(names[rand() % 10], this->type);
-	return zomb;
-}
+

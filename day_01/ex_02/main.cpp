@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 12:40:59 by edepauw           #+#    #+#             */
-/*   Updated: 2021/02/17 15:18:29 by eliott           ###   ########lyon.fr   */
+/*   Created: 2021/02/17 15:22:18 by eliott            #+#    #+#             */
+/*   Updated: 2021/02/17 16:15:23 by eliott           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "zombieHorde.hpp"
 
-#include <iostream>       // std::cout
-#include <string>         // std::string
-#include <locale>         // std::locale, std::toupper
+int main(void)
+{
+	ZombieEvent z;
+	Zombie *zombie;
 
-class Zombie{
-
-	public:
-		Zombie(std::string name, std::string type);
-		~Zombie( void );
-        void advert( void );
-        void announce( void );
-		std::string	name;
-		std::string type;
-
-};
-
-#endif
+	z.setZombieType("Runner");
+	z.setZombieType("Cracker");
+	zombie = z.newZombie("jean");
+	zombie->advert();
+	delete zombie;
+	z.setZombieType("Cracker");
+	zombie = z.RandomChump();
+	zombie->advert();
+	delete zombie;
+}
