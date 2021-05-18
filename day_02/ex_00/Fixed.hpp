@@ -10,27 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include "Weapon.hpp"
 #include <iostream>       // std::cout
-#include <string>         // std::string
-#include <locale>         // std::locale, std::toupper
-#include <cstdlib>
 
-class HumanB{
+class Fixed{
 
 	public:
-		HumanB(std::string name);
-		~HumanB(void);
-        void attack(void);
-        void setWeapon(Weapon &weapon);
+		Fixed( void );
+		Fixed(Fixed &fixed);
+		~Fixed( void );
+		void setRawBits(int const raw);
+		int getRawBits(void) const;
 
 	private:
-		std::string _name;
-		std::string _w_name;
-		Weapon *_weapon;
+		int _value;
+		static const int _bits = 8;
 };
 
 #endif

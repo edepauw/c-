@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 10:14:51 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/17 10:32:17 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/18 09:31:02 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,4 @@ HumanA::~HumanA( void )
 void HumanA::attack( void )
 {
     std::cout << _name << "  attacks with his " << _weapon.getType() << std::endl;
-}
-
-void HumanA::setWeapon( Weapon weapon )
-{
-    _weapon = weapon;
 }
