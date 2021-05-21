@@ -15,6 +15,7 @@
 
 #include <iostream>       // std::cout
 #include <ostream>
+#include <cmath>
 
 class Fixed{
 
@@ -24,7 +25,7 @@ class Fixed{
 		Fixed( float const val );
 		Fixed(Fixed const &fixed);
 		int toInt() const;
-		float toFloat();
+		float toFloat() const;
 		~Fixed( void );
 		void setRawBits(int const raw);
 		Fixed& operator=( Fixed const & f );
