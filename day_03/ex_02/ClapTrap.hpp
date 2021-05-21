@@ -6,28 +6,28 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/21 11:59:58 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:07:01 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef ClapTrap_HPP
+# define ClapTrap_HPP
 
 #include <iostream>	   // std::cout
 #include <ostream>
 #include <cstdlib>
 
-class FragTrap{
+class ClapTrap{
 
 	public:
-		FragTrap( void );
-		FragTrap( std::string name );
+		ClapTrap( void );
+		ClapTrap( std::string name );
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void vaulthunter_dot_exe(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		~FragTrap( void );
+		~ClapTrap( void );
 	private:
 		int _HitPoints;
 		int _MaxHitPoints;

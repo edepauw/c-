@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/21 11:11:03 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:07:02 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <ostream>
 #include <cstdlib>
 
-class FragTrap{
+class FragTrap : public ClapTrap
+{
 
 	public:
 		FragTrap( void );
