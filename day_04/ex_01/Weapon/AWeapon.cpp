@@ -1,0 +1,43 @@
+#include <iostream>	   // std::cout
+#include <ostream>
+#include <cstdlib>
+#include "AWeapon.hpp"
+
+AWeapon::AWeapon(std::string const & name, int apcost, int damage)
+{
+	_Name = name;
+	_Ap = apcost;
+}
+
+AWeapon::~AWeapon( void )
+{
+
+}
+
+AWeapon &AWeapon::operator=(AWeapon const &t)
+{
+	this->_Name = t._Name;
+	this->_Ap = t._Ap;
+	this->_Dmg = t._Dmg;
+}
+
+AWeapon::AWeapon(AWeapon const &t) : _Name(t._Name), _Dmg(t._Dmg), _Ap(t._Ap)
+{
+
+}
+
+std::string const AWeapon::getName( void ) const
+{
+	return(_Name);
+}
+
+
+int AWeapon::getAPCost( void ) const
+{
+	return(_Ap);
+}
+
+int AWeapon::getDamage( void ) const
+{
+	return (_Dmg);
+}
