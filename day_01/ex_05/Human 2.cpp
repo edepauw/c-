@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:15:16 by edepauw          ###   ########lyon.fr   */
+/*   Created: 2021/02/17 12:34:17 by edepauw           #+#    #+#             */
+/*   Updated: 2021/02/17 12:51:09 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-
-#include <iostream>	   // std::cout
-#include <ostream>
-#include <cstdlib>
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+#include "Human.hpp"
+Human::Human( void )
 {
+	this->brain = new Brain();
+}
 
-	public:
-		FragTrap( std::string name );
-		FragTrap( void );
-		void vaulthunter_dot_exe(std::string const & target);
-		~FragTrap( void );
-};
+Human::~Human( void )
+{
+	delete this->brain;
+}
 
-#endif
+void *Human::identify( void )
+{
+	return this->brain->identify();
+}
+Brain &Human::getBrain( void )
+{
+	return *this->brain;
+}
+
+

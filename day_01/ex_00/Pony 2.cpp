@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Pony.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:15:16 by edepauw          ###   ########lyon.fr   */
+/*   Created: 2020/07/18 16:41:00 by eliott            #+#    #+#             */
+/*   Updated: 2021/02/17 12:39:52 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "Pony.hpp"
 
-#include <iostream>	   // std::cout
-#include <ostream>
-#include <cstdlib>
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+Pony::Pony(void): name("jean"), height(12), age(3), color("grey"), gender("male")
 {
 
-	public:
-		FragTrap( std::string name );
-		FragTrap( void );
-		void vaulthunter_dot_exe(std::string const & target);
-		~FragTrap( void );
-};
+}
 
-#endif
+Pony::Pony(std::string name, int height, int age, std::string color, std::string gender): name(name), height(height), age(age), color(color), gender(gender)
+{
+
+}
+
+Pony::~Pony( void )
+{
+	std::cout << this->name << " just died." << std::endl;
+}
+

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:15:16 by edepauw          ###   ########lyon.fr   */
+/*   Created: 2021/05/21 09:52:14 by edepauw           #+#    #+#             */
+/*   Updated: 2021/05/23 15:11:29 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "FragTrap.hpp"
+#include "SuperTrap.hpp"
 
-#include <iostream>	   // std::cout
-#include <ostream>
-#include <cstdlib>
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+int main(void)
 {
-
-	public:
-		FragTrap( std::string name );
-		FragTrap( void );
-		void vaulthunter_dot_exe(std::string const & target);
-		~FragTrap( void );
-};
-
-#endif
+    SuperTrap david("david");
+    FragTrap bot("bot");
+    david.ninjaShoebox(bot);
+    david.getStats();
+    david.vaulthunter_dot_exe("david");
+}

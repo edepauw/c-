@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/21 11:43:07 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 17:22:08 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,18 @@
 #include <iostream>	   // std::cout
 #include <ostream>
 #include <cstdlib>
+#include "ClapTrap.hpp"
 
-class ScavTrap{
+class ScavTrap : public ClapTrap
+{
 
 	public:
 		ScavTrap( void );
 		ScavTrap( std::string name );
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
 		void challengeNewcomer( void );
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 		~ScavTrap( void );
 	private:
 		std::string chall[10];
-		int _HitPoints;
-		int _MaxHitPoints;
-		int _EnergyPoints;
-		int _MaxEnergyPoints;
-		int _Level;
-		std::string _Name;
-		int _MeleeAttackDamage;
-		int _RangedAttackDamage;
-		int _ArmorDamageReduction;
-		int checkEnergy(unsigned int cost);
 };
 
 #endif

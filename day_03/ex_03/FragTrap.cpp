@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 09:52:14 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:29:02 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 19:55:05 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ FragTrap::FragTrap( std::string name )
 }
 
 FragTrap::~FragTrap( void )
+{
+    std::cout << "Bye Jack!" << std::endl;
+}
+FragTrap::FragTrap( void )
 {
     std::cout << "Bye Jack!" << std::endl;
 }

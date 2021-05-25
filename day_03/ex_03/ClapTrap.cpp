@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 09:52:14 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:28:51 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/23 15:49:42 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ ClapTrap::ClapTrap( void )
 {
     std::cout << "CL4P-TP on!" << std::endl;
 }
+
+std::string ClapTrap::getName(void)
+{
+    return (_Name);
+}
+
 
 void ClapTrap::rangedAttack(std::string const &target)
 {
@@ -68,3 +74,18 @@ void ClapTrap::beRepaired(unsigned int val)
         _HitPoints = _MaxHitPoints;
     std::cout << "FR4G-TP " << _Name <<  " a recuperé " << val << " points de vie, il a maintenant " << _HitPoints << "HP!" << std::endl;
 }
+
+void ClapTrap::getStats( void )
+{
+    std::cout << "_EnergyPoints :" << _EnergyPoints << std::endl;
+	std::cout << "_MaxEnergyPoints :" << _MaxEnergyPoints << std::endl;
+	std::cout << "_Level :" << _Level << std::endl;
+    std::cout << "_Type :" << _Type << std::endl;
+    std::cout << "_Name :" << _Name << std::endl;
+    std::cout << "_HitPoints :" << _HitPoints << std::endl;
+	std::cout << "_MaxHitPoints :" << _MaxHitPoints << std::endl;
+	std::cout << "_MeleeAttackDamage :" << _MeleeAttackDamage << std::endl;
+	std::cout << "_RangedAttackDamage :" << _RangedAttackDamage << std::endl;
+	std::cout << "_ArmorDamageReduction :" << _ArmorDamageReduction << std::endl;
+}
+

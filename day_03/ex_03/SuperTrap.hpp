@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:55:10 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/22 17:17:46 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/05/22 17:54:24 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 
 #include <iostream>	   // std::cout
 #include <ostream>
 #include <cstdlib>
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-class ClapTrap{
-
+class SuperTrap : public FragTrap, public NinjaTrap
+{
 	public:
-		ClapTrap( void );
-		ClapTrap( std::string name );
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		int checkEnergy(unsigned int cost);
-		std::string type;
-		~ClapTrap( void );
-	protected:
-		int _HitPoints;
-		int _MaxHitPoints;
-		int _EnergyPoints;
-		int _MaxEnergyPoints;
-		int _Level;
-		std::string _Name;
-		std::string _Type;
-		int _MeleeAttackDamage;
-		int _RangedAttackDamage;
-		int _ArmorDamageReduction;
+		SuperTrap( void );
+		SuperTrap( std::string name );
+		~SuperTrap( void );
 };
 
 #endif
