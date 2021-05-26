@@ -1,3 +1,5 @@
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
 #include <iostream>	   // std::cout
 #include <ostream>
 #include <cstdlib>
@@ -18,4 +20,4 @@ class AWeapon
 		int getDamage( void ) const;
 		virtual void attack() const = 0;
 };
-
+#endif
