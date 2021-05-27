@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:40:59 by edepauw           #+#    #+#             */
-/*   Updated: 2021/02/17 15:47:17 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 10:56:14 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ZombieEvent{
 		void setZombieType(std::string type);
         Zombie * newZombie(std::string name);
 		Zombie * RandomChump( void );
+	private:
 		std::string type;
 
 };

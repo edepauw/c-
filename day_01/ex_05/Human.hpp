@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:40:59 by edepauw           #+#    #+#             */
-/*   Updated: 2021/02/17 18:58:21 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 11:12:10 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ class Human{
 	public:
 		Human(void);
 		~Human(void);
-		Brain &getBrain( void );
-		void *identify(void);
-		std::string name;
-		int age;
+		Brain const &getBrain( void ) const;
+		std::string identify(void) const;
 	private:
-		Brain *brain;
+		std::string name;
+		const Brain brain;
 };
 
 #endif

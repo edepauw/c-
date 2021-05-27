@@ -1,5 +1,6 @@
 #ifndef ISPACEMARINE_HPP
 # define ISPACEMARINE_HPP
+
 class ISpaceMarine
 {
     public:

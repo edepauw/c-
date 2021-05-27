@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:22:18 by eliott            #+#    #+#             */
-/*   Updated: 2021/02/17 16:15:23 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 10:55:21 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombieHorde.hpp"
+#include "zombieEvent.hpp"
 
 int main(void)
 {

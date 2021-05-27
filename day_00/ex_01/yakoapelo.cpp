@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   yakoapelo.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 19:13:11 by eliott            #+#    #+#             */
-/*   Updated: 2021/02/16 10:25:08 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 10:50:30 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,43 +21,44 @@ void printinfo(void)
 	std::cout << "    - EXIT" << std::endl;
 }
 
-void searchusr(Contact instances[7])
+void searchusr(Contact instances[7], int a)
 {
 	int i;
 	std::string usr;
 	i = 0;
 	std::cout << "|  index   |firstname | lastname |  login   |" << std::endl;
-	while (instances[i].is_filled)
+	while (instances[i].getif() == 1)
 	{
 		std::cout << "|    " << i << "     |";
 		// std::cout << instances[i].firstName.substr(0,9);
-		if (instances[i].firstName.length() >= 9 && instances[i].firstName.back() != ' ')
-			std::cout << instances[i].firstName.substr(0,9) << ".|";
+		if (instances[i].getfName().length() >= 9 && instances[i].getfName().back() != ' ')
+			std::cout << instances[i].getfName().substr(0,9) << ".|";
 		else{
-			while (instances[i].firstName.length() < 10)
-				instances[i].firstName.insert(instances[i].firstName.length(), " ");
-			std::cout << instances[i].firstName << "|";
+			while (instances[i].getfName().length() < 10)
+				instances[i].getfName().insert(instances[i].getfName().length(), " ");
+			std::cout << instances[i].getfName() << "|";
 		}
-		if (instances[i].lastName.length() >= 9 && instances[i].lastName.back() != ' ')
-			std::cout << instances[i].lastName.substr(0,9) << ".|";
+		if (instances[i].getlName().length() >= 9 && instances[i].getlName().back() != ' ')
+			std::cout << instances[i].getlName().substr(0,9) << ".|";
 		else{
-			while (instances[i].lastName.length() < 10)
-				instances[i].lastName.insert(instances[i].lastName.length(), " ");
-			std::cout << instances[i].lastName << "|";
+			while (instances[i].getlName().length() < 10)
+				instances[i].getlName().insert(instances[i].getlName().length(), " ");
+			std::cout << instances[i].getlName() << "|";
 		}
-		if (instances[i].login.length() >= 9 && instances[i].login.back() != ' ')
-			std::cout << instances[i].login.substr(0,9) << ".|";
+		if (instances[i].getlogin().length() >= 9 && instances[i].getlogin().back() != ' ')
+			std::cout << instances[i].getlogin().substr(0,9) << ".|";
 		else{
-			while (instances[i].login.length() < 10)
-				instances[i].login.insert(instances[i].login.length(), " ");
-			std::cout << instances[i].login << "|";
+			while (instances[i].getlogin().length() < 10)
+				instances[i].getlogin().insert(instances[i].getlogin().length(), " ");
+			std::cout << instances[i].getlogin() << "|";
 		}
 		std::cout << std::endl;
 		i++;
 	}
 	std::cout << "Type the index of the desired contact:";
-	std::cin >> usr;
-	instances[std::stoi(usr, nullptr, 10)].printContact();
+	std::getline(std::cin, usr);
+	if(std::stoi(usr, nullptr, 10) <= a)
+		instances[std::stoi(usr, nullptr, 10)].printContact();
 }
 
 int		choose(std::string userstr)
@@ -78,7 +79,7 @@ int		main(void)
 	printinfo();
 	while (ret != 0 )
 	{
-		std::cin >> userstr;
+		std::getline(std::cin , userstr);
 		ret = choose(userstr);
 		if( ret == 1 && i > 7){
 			std::cout << "The maximum contact is reached!" << std::endl;
@@ -87,8 +88,8 @@ int		main(void)
 			instances[i].fill();
 			i++;
 		}
-		if( ret == 2)
-			searchusr(instances);
+		if( ret == 2 )
+			searchusr(instances, i);
 	}
 	return 0;
 }

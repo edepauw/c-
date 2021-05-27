@@ -13,21 +13,21 @@
 #include "Human.hpp"
 Human::Human( void )
 {
-	this->brain = new Brain();
+
 }
 
 Human::~Human( void )
 {
-	delete this->brain;
+
 }
 
-void *Human::identify( void )
+std::string Human::identify( void ) const
 {
-	return this->brain->identify();
+	return this->brain.identify();
 }
-Brain &Human::getBrain( void )
+Brain const &Human::getBrain( void ) const
 {
-	return *this->brain;
+	return this->brain;
 }
 
 

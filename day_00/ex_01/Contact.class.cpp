@@ -34,29 +34,49 @@ void	Contact::printContact(void) const{
 	std::cout << "Underwear color : " << this->underwearColor << std::endl;
 	std::cout << "Darkest secret : " << this->darkestSecret << std::endl;
 }
+std::string &Contact::getfName( void )
+{
+	return(firstName);
+}
+
+std::string &Contact::getlName( void )
+{
+	return(lastName);
+}
+
+std::string &Contact::getlogin( void )
+{
+	return(login);
+}
+
+int Contact::getif( void )
+{
+	return(is_filled);
+}
+
 void	Contact::fill(void){
 	std::cout << "First name : ";
-	std::cin >> this->firstName;
+	std::getline(std::cin, this->firstName);
 	std::cout << "Last name : ";
-	std::cin >> this->lastName;
+	std::getline(std::cin, this->lastName);
 	std::cout << "Nickname : ";
-	std::cin >> this->nickname;
+	std::getline(std::cin, this->nickname);
 	std::cout << "Login : ";
-	std::cin >> this->login;
+	std::getline(std::cin, this->login);
 	std::cout << "Postal adress: ";
-	std::cin >> this->postalAdress;
+	std::getline(std::cin, this->postalAdress);
 	std::cout << "Email adress : ";
-	std::cin >> this->emailAdress;
+	std::getline(std::cin, this->emailAdress);
 	std::cout << "Phone number : ";
-	std::cin >> this->phoneNumber;
+	std::getline(std::cin, this->phoneNumber);
 	std::cout << "Birthday date : ";
-	std::cin >> this->birthdayDate;
+	std::getline(std::cin, this->birthdayDate);
 	std::cout << "Favorite meal : ";
-	std::cin >> this->favoriteMeal;
+	std::getline(std::cin, this->favoriteMeal);
 	std::cout << "Underwear color : ";
-	std::cin >> this->underwearColor;
+	std::getline(std::cin, this->underwearColor);
 	std::cout << "Darkest secret : ";
-	std::cin >> this->darkestSecret;
+	std::getline(std::cin, this->darkestSecret);
 	std::cout << "Contact succesfully created!" << std::endl;
 	this->is_filled = 1;
 }

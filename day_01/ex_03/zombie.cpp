@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:34:17 by edepauw           #+#    #+#             */
-/*   Updated: 2021/02/17 16:32:16 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 10:57:42 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 Zombie::Zombie( void )
 {
+	srand(time(NULL));
 	std::string names[10] = {"Jean", "Bizon", "Lara", "Maxime", "Francois", "Pichon", "Thomas", "Juan", "Jacques", "Franck"};
 	std::string types[4] = {"Runner", "Walker", "Crawler", "Ghouls"};
 	this->name = names[rand() % 10];

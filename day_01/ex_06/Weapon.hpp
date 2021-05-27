@@ -13,6 +13,7 @@ class Weapon{
 		~Weapon( void );
 		std::string getType( void );
 		void setType(std::string type);
+	private:
 		std::string type;
 };
 

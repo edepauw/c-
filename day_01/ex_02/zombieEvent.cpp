@@ -26,7 +26,6 @@ Zombie *  ZombieEvent::newZombie(std::string name)
 
 Zombie *  ZombieEvent::RandomChump( void )
 {
-	srand(time(0));
 	std::string names[10] = {"Jean", "Bizon", "Lara", "Maxime", "Francois", "Pichon", "Thomas", "Juan", "Jacques", "Franck"};
 	Zombie *zomb = new Zombie(names[rand() % 10], this->type);
 	return zomb;

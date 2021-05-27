@@ -23,13 +23,15 @@ class Pony {
 	public:
 
 		Pony(std::string name, int height, int age, std::string color, std::string gender);
-		~Pony( void );
-		std::string	name;
-		int		height;
-		int		age;
-		std::string color;
-		std::string gender;
 		Pony( void );
+		~Pony( void );
+		private:
+			std::string	name;
+			int		height;
+			int		age;
+			std::string color;
+			std::string gender;
+
 
 };
 

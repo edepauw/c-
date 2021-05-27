@@ -1,8 +1,13 @@
 #include "Pony.hpp"
-
-int main(void)
+void ponyOnTheStack()
 {
-	Pony s_pony = Pony();
-	Pony *h_pony = new Pony("francis", 14, 5, "white", "female");
-	delete h_pony;
+    Pony ponyStack = Pony(std::string name, int height, int age, std::string color, std::string gender);    
+
+}
+
+void ponyOnTheHeap()
+{
+    Pony  *ponyHeap = new Pony("Jacques", 96);
+
+    delete ponyHeap;
 }

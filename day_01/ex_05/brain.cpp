@@ -21,9 +21,10 @@ Brain::~Brain( void )
 {
 }
 
-Brain *Brain::identify( void )
+std::string Brain::identify( void ) const
 {
-	Brain *p_b = this;
-	return p_b;
+	std::stringstream ss;
+	ss << this;
+	return(ss.str());
 }
 

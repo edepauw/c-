@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:34:17 by edepauw           #+#    #+#             */
-/*   Updated: 2021/02/17 15:41:19 by eliott           ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 10:55:55 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Zombie::Zombie(std::string name, std::string type): name(name), type(type)
 {
+	srand(time(0));
 	this->announce();
 }
 
