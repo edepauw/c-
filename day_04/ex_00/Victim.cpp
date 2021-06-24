@@ -4,9 +4,22 @@ Victim::Victim( void )
 {
 }
 
+
 Victim::Victim(std::string name)
 {
 	_Name = name;
+	std::cout << "Some random victim called "  << _Name << " just appeared!" << std::endl;
+}
+
+Victim & Victim::operator=( Victim const &f )
+{
+	_Name = f._Name;
+	return *this;
+}
+
+Victim::Victim(Victim const & f)
+{
+	*this = f;
 	std::cout<< "Some random victim called "  << _Name << " just appeared!" << std::endl;
 }
 

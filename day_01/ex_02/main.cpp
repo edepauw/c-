@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:22:18 by eliott            #+#    #+#             */
-/*   Updated: 2021/05/27 10:55:21 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/06/11 14:59:33 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	zombie = z.newZombie("jean");
 	zombie->advert();
 	delete zombie;
-	z.setZombieType("Cracker");
+	z.setZombieType("pupupupute");
 	zombie = z.RandomChump();
 	zombie->advert();
 	delete zombie;

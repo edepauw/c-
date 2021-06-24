@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eliott <eliott@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/17 16:58:45 by eliott            #+#    #+#              #
-#    Updated: 2020/07/18 11:31:49 by eliott           ###   ########lyon.fr    #
+#    Updated: 2021/06/11 11:04:44 by edepauw          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH		= ./
 
-SRCS_NAME		= yakoapelo.cpp Contact.class.cpp #yakoapelo.class.hpp
+SRCS_NAME		= PhoneBook.cpp Contact.class.cpp #$(NAME).class.hpp
 
 SRC				= $(addprefix $(SRC_PATH), $(SRCS_NAME))
 
@@ -22,7 +22,7 @@ OBJ_NAME 		= ${SRCS_NAME:.c=.o}
 
 OBJ 			= $(addprefix $(SRC_PATH), $(OBJ_NAME))
 
-NAME			= yakoapelo
+NAME			= My_Awesome_PhoneBook
 
 RM				= rm -rf
 
@@ -38,7 +38,7 @@ all: $(OBJ_PATH) $(NAME)
 
 $(NAME): $(OBJ)
 	@clang++ $(FLAG) $(OBJ) -o $(NAME)
-	@printf "\33[2K\r \033[0m\033[0;33myakoapelo: \t\033[0;38;5;121is compiled!\n\033[0m"
+	@printf "\33[2K\r \033[0m\033[0;33m$(NAME): \t\033[0;38;5;121is compiled!\n\033[0m"
 
 $(OBJ_PATH):
 	@mkdir -p obj/ 2> /dev/null
@@ -48,21 +48,21 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@clang++ $(FLAG) -c $< -o $@
 
 clean:
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/.	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/.	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/..	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/..	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/...	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/...	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/.	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/.	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/..	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/..	\033[37m"
 	@sleep 0.1
-	@printf "\033[2K\r\033[31mDeleting yakoapelo srcs/...	\033[37m"
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/...	\033[37m"
 	@sleep 0.1
 	@${RM} ${OBJ_PATH}
 	@printf "\33[2K\r \033[0;32m[OK] \033[0m \033[36m Deleted successfully!\n\033[0m"

@@ -67,7 +67,7 @@ void Character::attack(Enemy * e)
     _Weapon->attack();
     e->takeDamage(_Weapon->getDamage());
     _AP -= _Weapon->getAPCost();
-    std::cout << e->getHP() << std::endl;
+    //std::cout << e->getHP() << std::endl;
     if (e->getHP() <= 0)
         delete e;
 }

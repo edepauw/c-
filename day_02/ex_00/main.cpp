@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:10:46 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/20 17:24:25 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/06/15 08:53:30 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int main(void) {
     Fixed b(a);
     Fixed c;
     c = b;
-    std::cout << a.getRawBits() << std::endl;
-    a.setRawBits(13);
+    
     std::cout << a.getRawBits() << std::endl;
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;

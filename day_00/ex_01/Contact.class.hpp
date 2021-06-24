@@ -3,6 +3,7 @@
 
 #include <iostream>       // std::cout
 #include <string>         // std::string
+#include <cctype>     
 #include <locale>         // std::locale, std::toupper
 
 class Contact

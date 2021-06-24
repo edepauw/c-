@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:34:17 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/18 09:30:33 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/06/11 15:08:42 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::~Weapon( void )
 {
 }
 
-std::string Weapon::getType( void )
+std::string const &Weapon::getType( void )
 {
 	return this->type;
 }

@@ -32,7 +32,6 @@ class Pony {
 			std::string color;
 			std::string gender;
 
-
 };
 
 #endif

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "zombieHorde.hpp"
-ZombieHorde::ZombieHorde(int n):n(n)
+ZombieHorde::ZombieHorde(int n):_n(n)
 {
 	this->horde = new Zombie[n];
 }
@@ -21,7 +21,7 @@ void ZombieHorde::announce(void)
 	int i;
 
 	i = 0;
-	while (i < this->n)
+	while (i < _n)
 	{
 		this->horde[i].announce();
 		i++;

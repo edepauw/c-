@@ -6,7 +6,7 @@
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:40:59 by edepauw           #+#    #+#             */
-/*   Updated: 2021/05/27 10:58:07 by edepauw          ###   ########lyon.fr   */
+/*   Updated: 2021/06/11 15:03:04 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ZombieHorde{
 		void announce(void);
 	private:
 		Zombie *horde;
-		int n;
+		int _n;
 
 };
 
