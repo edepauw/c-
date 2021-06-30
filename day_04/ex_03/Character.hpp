@@ -15,7 +15,7 @@
 
 #include "ICharacter.hpp"
 
-class Character: virtual public ICharacter
+class Character: public ICharacter
 {
 
 public:

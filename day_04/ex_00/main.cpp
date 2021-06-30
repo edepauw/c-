@@ -19,10 +19,12 @@ int main()
 {
 Sorcerer robert("Robert", "the Magnificent");
 Victim jim("Jimmy");
-Peon j("Zoe");
-Peon joe(j);
-std::cout << robert << jim << joe;
+Peon j("joe");
+Murloc mu("mumu");
+
+std::cout << robert << jim << mu << j;
 robert.polymorph(jim);
-robert.polymorph(joe);
+robert.polymorph(mu);
+robert.polymorph(j);
 return 0;
 }

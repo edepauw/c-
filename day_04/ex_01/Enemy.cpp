@@ -5,9 +5,19 @@ Enemy::Enemy(int hp, std::string const & type): _Type(type) , _HP(hp)
 
 }
 
+Enemy::Enemy( void )
+{
+
+}
+
 Enemy::~Enemy( void )
 {
 
+}
+
+Enemy::Enemy( Enemy const &t )
+{
+    *this = t;
 }
 
 Enemy &Enemy::operator=(Enemy const &t)
@@ -21,16 +31,11 @@ void Enemy::takeDamage(int val)
 {
     if (val > 0)
     {
-        if (_HP - val > 0)
+        if (_HP > (u_int)val)
             _HP -= val;
         else
             _HP = 0;
     }
-}
-
-Enemy::Enemy(Enemy const &t) : _Type(t._Type), _HP(t._HP)
-{
-
 }
 
 std::string const Enemy::getType( void ) const

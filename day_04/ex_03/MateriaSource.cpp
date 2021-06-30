@@ -44,6 +44,8 @@ MateriaSource & MateriaSource::operator=( MateriaSource const & rhs )
 
 void		MateriaSource::learnMateria( AMateria *materia )
 {
+	if (materia == NULL)
+		return ;
 	if (_count < 3)
 	{
 		_inventory[_count] = materia;
@@ -53,10 +55,13 @@ void		MateriaSource::learnMateria( AMateria *materia )
 
 AMateria*	MateriaSource::createMateria( std::string const & type )
 {
-	if (type == "ice")
-		return (new Ice());
-	else if (type == "cure")
-		return (new Cure());
-	else
-		return NULL;
+	for(int i = 0; i < _count; i++)
+	{
+		if((_inventory[i]->getType() == "ice") && type == "ice")
+			return(new Ice());
+		if((_inventory[i]->getType() == "cure") && type == "cure")
+			return(new Cure());
+	}
+	std::cout << "No materia corresponding" << std::endl;
+	return NULL;
 }

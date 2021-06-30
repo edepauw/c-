@@ -6,6 +6,8 @@
 
 class AWeapon
 {
+	private:
+		AWeapon( void );
 	protected:
 		std::string _Name;
 		unsigned int _Dmg;
@@ -19,5 +21,6 @@ class AWeapon
 		int getAPCost( void ) const;
 		int getDamage( void ) const;
 		virtual void attack() const = 0;
+
 };
 #endif

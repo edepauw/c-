@@ -12,7 +12,10 @@ AWeapon::AWeapon(std::string const & name, int apcost, int damage)
 
 AWeapon::~AWeapon( void )
 {
+}
 
+AWeapon::AWeapon( void )
+{
 }
 
 AWeapon &AWeapon::operator=(AWeapon const &t)
@@ -23,9 +26,9 @@ AWeapon &AWeapon::operator=(AWeapon const &t)
 	return (*this);
 }
 
-AWeapon::AWeapon(AWeapon const &t) : _Name(t._Name), _Dmg(t._Dmg), _Ap(t._Ap)
+AWeapon::AWeapon(AWeapon const &t)
 {
-
+	*this = t;
 }
 
 std::string const AWeapon::getName( void ) const

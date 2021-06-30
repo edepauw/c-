@@ -6,10 +6,11 @@
 
 class Enemy
 {
+    private:
+        Enemy();
     protected:
         std::string _Type;
         unsigned int _HP;
-
     public:
         Enemy(int hp, std::string const & type);
         Enemy(Enemy const &t);
@@ -17,7 +18,7 @@ class Enemy
         Enemy & operator=(Enemy const &t);
         std::string const getType() const;
         int getHP() const;
-        virtual void takeDamage(int);
+        virtual void takeDamage(int val);
 };
 
 #endif

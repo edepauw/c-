@@ -12,11 +12,12 @@ class Character
         std::string _Name;
         AWeapon *_Weapon;
         unsigned int _AP;
+        Character();
         int _equiped;
     public:
         Character(std::string const & name);
         Character(Character const & c);
-        ~Character();
+        virtual ~Character();
         Character &operator=(Character const & c);
         void recoverAP();
         void equip(AWeapon * w);

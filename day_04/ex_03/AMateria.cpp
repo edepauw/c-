@@ -12,7 +12,7 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria( std::string const & type ): _type(type)
+AMateria::AMateria( std::string const & type ): _type(type), _xp(0)
 {
 	_xp = 0;
 }
@@ -23,18 +23,26 @@ AMateria::AMateria( AMateria const & src ): _type(src._type), _xp(src._xp)
 
 std::string const & AMateria::getType( void ) const
 {
-	return this->_type;
+	return _type;
 }
 
 unsigned int AMateria::getXP( void ) const
 {
-	return this->_xp;
+	return _xp;
+}
+
+void AMateria::use( ICharacter& target )
+{
+    std::cout << "tmp" << std::endl;
+	_xp += 10;
+	std::cout << "* shoots Materia at" <<  target.getName() << " *" << std::endl;
+    std::cout << "tmp" << std::endl;
 }
 
 AMateria & AMateria::operator=( AMateria const & rhs )
 {
-	this->_type = rhs._type;
-	this->_xp = rhs._xp;
+	_type = rhs._type;
+	_xp = rhs._xp;
 	return *this;
 }
 

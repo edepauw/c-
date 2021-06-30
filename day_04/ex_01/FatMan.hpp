@@ -9,6 +9,8 @@ class FatMan : public AWeapon
 {
 	public:
 		FatMan( void );
+		FatMan(FatMan const & f);
+		FatMan & operator=(FatMan const & f);
 		virtual ~FatMan( void );
 		void attack() const;
 };

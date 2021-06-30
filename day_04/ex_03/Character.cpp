@@ -14,7 +14,11 @@
 
 Character::Character( std::string name ): _name(name), _inventory(NULL), _count(0)
 {
-	this->_inventory = new AMateria*[4];
+	_inventory = new AMateria*[4];
+	_inventory[0] = NULL;
+	_inventory[1] = NULL;
+	_inventory[2] = NULL;
+	_inventory[3] = NULL;
 }
 
 Character::~Character( void )
@@ -29,27 +33,27 @@ Character::Character( Character const & src )
 
 std::string const & Character::getName( void ) const
 {
-	return this->_name;
+	return _name;
 }
 
 Character & Character::operator=( Character const & rhs )
 {
 	int i = 0;
-	while (i <= this->_count)
+	while (i <= _count)
 	{
-		delete this->_inventory[i];
+		delete _inventory[i];
 		i++;
 	}
-	delete [] this->_inventory;
+	delete [] _inventory;
 	i = 0;
 	if (this != &rhs)
 	{
-		this->_inventory = new AMateria*[rhs._count];
-		this->_name = rhs._name;
-		this->_count = rhs._count;
+		_inventory = new AMateria*[rhs._count];
+		_name = rhs._name;
+		_count = rhs._count;
 		while (i <= _count)
 		{
-			this->_inventory[i] = rhs._inventory[i]->clone();
+			_inventory[i] = rhs._inventory[i]->clone();
 			i++;
 		}
 	}
@@ -58,6 +62,8 @@ Character & Character::operator=( Character const & rhs )
 
 void	Character::equip( AMateria * materia )
 {
+	if (materia == NULL)
+		return ;
 	if (_count > 3)
 		return ;
 	_inventory[_count] = materia;
@@ -66,7 +72,10 @@ void	Character::equip( AMateria * materia )
 
 void	Character::use( int i, ICharacter& target )
 {
+	if (_inventory[i] == NULL)
+		return ;
 	_inventory[i]->use(target);
+
 }
 
 void	Character::unequip( int i )

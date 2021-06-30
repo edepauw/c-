@@ -16,11 +16,10 @@
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 
-class MateriaSource: virtual public IMateriaSource
+class MateriaSource: public IMateriaSource
 {
 
 public:
-
 	MateriaSource( void );
 	MateriaSource( MateriaSource const & src );
 	MateriaSource & operator=( MateriaSource const & rhs );

@@ -10,7 +10,12 @@ Character::Character(Character const & c)
     *this = c;
 }
 
-Character::~Character()
+Character::~Character( void )
+{
+
+}
+
+Character::Character( void )
 {
 
 }
@@ -47,6 +52,8 @@ int Character::getAP( void ) const
 
 void Character::equip(AWeapon * w)
 {
+    if (w == NULL)
+        return;
     _equiped = 1;
     _Weapon = w;
 }
@@ -61,15 +68,24 @@ std::ostream &operator<<(std::ostream &os, Character const & c)
 
 void Character::attack(Enemy * e)
 {
-    if (_equiped == 0)
+    if (_equiped == 0 || e == NULL || e->getHP() == 0)
         return ;
+    if (getAP() < _Weapon->getAPCost())
+    {    std::cout << _Name <<" have not enough AP to fight!" << std::endl;
+        return ;
+    }
     std::cout << _Name <<" attacks " << e->getType() << " with a " << _Weapon->getName() << std::endl;
     _Weapon->attack();
     e->takeDamage(_Weapon->getDamage());
     _AP -= _Weapon->getAPCost();
-    //std::cout << e->getHP() << std::endl;
-    if (e->getHP() <= 0)
+    if (e->getHP())
+        std::cout << e->getType() << " is alive and has " << e->getHP() << "." << std::endl;
+    else
+    {
+        std::cout << e->getType() << " is dead." << std::endl;
         delete e;
+    }
+
 }
 
 std::string const Character::getName() const
