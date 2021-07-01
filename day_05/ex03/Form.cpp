@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:17:53 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:18:48 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
@@ -75,4 +75,3 @@ int			Form::getSignGrade() const
 {
 	return _signgrade;
 }
-

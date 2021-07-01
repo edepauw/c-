@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:17:50 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:18:46 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
@@ -30,21 +30,19 @@ class Bureaucrat
 		std::string const &getName() const;
 		Bureaucrat &operator=(Bureaucrat const &rhs);
 		~Bureaucrat(void);
-		class TooHighException : public std::exception
+		struct TooHighException : public std::exception
 		{
-			public:
-				const char * what() const throw ()
-				{
-					return("Too High grade!");
-				}
+			const char * what() const throw ()
+			{
+				return("Too High grade!");
+			}
 		};
-		class TooLowException : public std::exception
+		struct TooLowException : public std::exception
 		{
-			public:
-				const char * what() const throw ()
-				{
-					return("Too Low grade!");
-				}
+			const char * what() const throw ()
+			{
+				return("Too Low grade!");
+			}
 		};
 	private:
 		std::string const	_name;

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:18:09 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:19:15 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 #include "Form.hpp"
-#include <iostream>
 
-
-class PresidentialPardonForm : public Form
+class RobotomyRequestForm : public Form
 {
 	private:
-		PresidentialPardonForm(void);
-		void pardon() const;
+		RobotomyRequestForm(void);
+		void    robotomize(void) const;
 		std::string _target;
 	public:
-		PresidentialPardonForm(PresidentialPardonForm const & c);
-		PresidentialPardonForm(std::string const &target);
+		RobotomyRequestForm(std::string const &target);
+		RobotomyRequestForm( RobotomyRequestForm const & c);
+		RobotomyRequestForm& operator=( RobotomyRequestForm const & c);
+		~RobotomyRequestForm(void);
 		std::string const &getTarget(void) const;
-		void execute(Bureaucrat const & executor) const;
-		PresidentialPardonForm& operator=( PresidentialPardonForm const & c);
-		~PresidentialPardonForm(void);
+		void    execute(Bureaucrat const & executor) const;
 };
+
 #endif

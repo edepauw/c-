@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:17:28 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:18:44 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
@@ -35,6 +35,17 @@ int Bureaucrat::getGrade() const
 	return _grade;
 }
 
+void Bureaucrat::executeForm(Form const & form)
+{
+	try {
+		form.execute(*this);
+	}
+	catch (Form::TooLowBGrade())
+	{
+		std::cout << "too low for executing this Form!" << std::endl; 
+	}
+}
+
 void Bureaucrat::increment()
 {
 	_grade++;
@@ -44,17 +55,17 @@ void Bureaucrat::increment()
 		throw TooHighException();
 	return ;
 }
-void Bureaucrat::signForm(Form *src)
+void Bureaucrat::signForm(Form &src)
 {
-	try{
-		src->beSigned(*this);
+	try {
+		src.beSigned(*this);
 	}
 	catch(Form::TooLowBGrade& e)
 	{
-		std::cout << getName() << " cannot sign " << src->getName() << " because " << e.what() << std::endl;
+		std::cout << getName() << " cannot sign " << src.getName() <<" because "<< e.what() <<std::endl;
 		return ;
 	}
-	std::cout << getName() << " signs " << src->getName() << std::endl;
+		std::cout << getName() << " signs " << src.getName() << std::endl;
 }
 
 void Bureaucrat::decrement()
@@ -79,5 +90,4 @@ std::ostream &operator<<(std::ostream & os, Bureaucrat const &brc)
 }
 
 Bureaucrat::~Bureaucrat(void)
-{
-}
+{}

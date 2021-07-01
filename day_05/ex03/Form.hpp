@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:17:37 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:18:54 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
@@ -51,11 +51,12 @@ class Form
 		void		beSigned(Bureaucrat &brc);
 		int			getExecGrade() const;
 		int			getSignGrade() const;
-	private:
-	std::string const _name;
-	bool		_signed;
-	int	const	_execgrade;
-	int	const	_signgrade;
+		virtual void		execute(Bureaucrat const & executor) const = 0;;
+	protected:
+		std::string const _name;
+		bool		_signed;
+		int	const	_execgrade;
+		int	const	_signgrade;
 
 };
 std::ostream &operator<<(std::ostream & os, Form const &f);

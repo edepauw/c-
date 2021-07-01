@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 13:18:09 by edepauw           #+#    #+#             */
+/*   Created: 2021/07/01 13:19:20 by edepauw           #+#    #+#             */
 /*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 #include "Form.hpp"
-#include <iostream>
+#include <fstream>
 
-
-class PresidentialPardonForm : public Form
+class ShrubberyCreationForm : public Form
 {
 	private:
-		PresidentialPardonForm(void);
-		void pardon() const;
+		ShrubberyCreationForm(void);
+		void    createShrubbery(void) const;
 		std::string _target;
 	public:
-		PresidentialPardonForm(PresidentialPardonForm const & c);
-		PresidentialPardonForm(std::string const &target);
+		ShrubberyCreationForm(std::string const &target);
+		ShrubberyCreationForm( ShrubberyCreationForm const & c);
+		ShrubberyCreationForm& operator=( ShrubberyCreationForm const & c);
 		std::string const &getTarget(void) const;
-		void execute(Bureaucrat const & executor) const;
-		PresidentialPardonForm& operator=( PresidentialPardonForm const & c);
-		~PresidentialPardonForm(void);
+		void    execute(Bureaucrat const & executor) const;
+		~ShrubberyCreationForm(void);
 };
 #endif

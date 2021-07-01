@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/01 13:18:02 by edepauw           #+#    #+#             */
+/*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -6,7 +18,7 @@
 
 int main()
 {
-	std::cout << "__________________too low Exceptions_______________________" << std::endl;
+	std::cout << "__________________too low Exception_______________________" << std::endl;
 	{
 		try{
 			Bureaucrat bob("Bob", 153);
@@ -20,7 +32,7 @@ int main()
 			std::cout << "Too High" << std::endl;
 		}
 	}
-	std::cout << "__________________too high Exceptions_______________________" << std::endl;
+	std::cout << "__________________too high Exception_______________________" << std::endl;
 	{
 		try{
 			Bureaucrat bob("Bob", 0);
@@ -50,14 +62,13 @@ int main()
 			std::cout << "Too High" << std::endl;
 		}
 	}
-	std::cout << "____________________ex_01_____________________" << std::endl;
+	std::cout << "____________________ex_02_____________________" << std::endl;
 	{
 		try{
-			Bureaucrat jim("President", 1);
+			Bureaucrat jim("President", 151);
 			ShrubberyCreationForm	f("Jean Eude");
 			RobotomyRequestForm	g("Bernard");
 			PresidentialPardonForm	r("Donatian");
-			// Form		*d = new Form("form2", 20, 20);
 			jim.signForm(f);
 			jim.executeForm(f);
 			jim.signForm(g);

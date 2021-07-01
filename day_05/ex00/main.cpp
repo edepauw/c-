@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/01 13:17:22 by edepauw           #+#    #+#             */
+/*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 int main()
 {
@@ -37,24 +48,6 @@ int main()
 			Bureaucrat bob("Bob", 1);
 			Bureaucrat jim("Jim", 50);
 			Bureaucrat dav("Dav", 150);
-		}
-		catch (Bureaucrat::TooLowException& e)
-		{
-			std::cout << "Too Low" << std::endl;
-		}
-		catch (Bureaucrat::TooHighException& e)
-		{
-			std::cout << "Too High" << std::endl;
-		}
-	}
-	std::cout << "____________________ex_01_____________________" << std::endl;
-	{
-		try{
-			Bureaucrat jim("Jim", 50);
-			Form		f("form1", 80, 80);
-			Form		d("form2", 20, 20);
-			jim.signForm(&f);
-			jim.signForm(&d);
 		}
 		catch (Bureaucrat::TooLowException& e)
 		{

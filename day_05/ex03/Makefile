@@ -6,13 +6,13 @@
 #    By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/17 16:58:45 by eliott            #+#    #+#              #
-#    Updated: 2021/07/01 12:56:05 by edepauw          ###   ########lyon.fr    #
+#    Updated: 2021/07/01 13:00:45 by edepauw          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH		= ./
 
-SRCS_NAME		=  Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Form.cpp RobotomyRequestForm.cpp main.cpp
+SRCS_NAME		=  Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Form.cpp RobotomyRequestForm.cpp main.cpp Intern.cpp
 
 SRC				= $(addprefix $(SRC_PATH), $(SRCS_NAME))
 

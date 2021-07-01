@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/01 13:17:34 by edepauw           #+#    #+#             */
+/*   Updated: 2021/07/01 13:19:31 by edepauw          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -32,6 +44,7 @@ void	Form::beSigned(Bureaucrat &brc)
 
 Form		&Form::operator=(Form const &rhs)
 {
+	(void)rhs;
 	return *this;
 }
 std::ostream &operator<<(std::ostream & os, Form const &f)
@@ -62,9 +75,3 @@ int			Form::getSignGrade() const
 {
 	return _signgrade;
 }
-
-void		Form::setSigned(bool &b)
-{
-	_signed = b;
-}
-
