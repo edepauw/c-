@@ -1,4 +1,5 @@
 #include "Convert.hpp"
+
 Convert::Convert(void)
 {
 }

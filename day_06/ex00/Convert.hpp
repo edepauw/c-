@@ -20,8 +20,6 @@ class Convert
 	public:
 		Convert(char *str);
 		bool    isRound(void);
-		bool isImpossible(void);
-		void exception(std::string & str);
 		void display(void);
 		~Convert(void);
 };

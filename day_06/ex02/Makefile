@@ -3,42 +3,73 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rpichon <rpichon@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: edepauw <edepauw@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/09 13:51:45 by rpichon           #+#    #+#              #
-#    Updated: 2021/04/13 15:13:58 by rpichon          ###   ########lyon.fr    #
+#    Created: 2020/07/17 16:58:45 by eliott            #+#    #+#              #
+#    Updated: 2021/07/03 19:32:27 by edepauw          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
+SRC_PATH		= ./
 
-SRCS		= 		main.cpp
-OBJS		= 		${SRCS:.cpp=.o}
-NAME		= 		base
-RM			= 		rm -f
-FLAGS 		= 		-Wall -Wextra -Werror
+SRCS_NAME		=   main.cpp
+
+SRC				= $(addprefix $(SRC_PATH), $(SRCS_NAME))
+
+OBJ_PATH 		= obj/
+
+OBJ_NAME 		= ${SRCS_NAME:.c=.o}
+
+OBJ 			= $(addprefix $(SRC_PATH), $(OBJ_NAME))
+
+NAME			= identify
+
+RM				= rm -rf
+
+FLAG			= -Wall -Wextra -Werror
+
+#FLAGS			= -g3 -fsanitize=address
 
 # **************************************************************************** #
 #								REGLES									       #
 # **************************************************************************** #
 
-all:							$(NAME)
+all: $(OBJ_PATH) $(NAME)
 
-%.o: %.cpp
-								@clang++ $(FLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	@clang++ $(FLAG) $(OBJ) -o $(NAME)
+	@printf "\33[2K\r \033[0m\033[0;33m$(NAME): \t\033[0;38;5;121is compiled!\n\033[0m"
 
-$(NAME):						$(OBJS) Makefile
-								@clang++ $(FLAGS) $(OBJS) -o $(NAME)
-								@echo "\n\033[0;32m[BASE OK] \033[0m \033\n"
+$(OBJ_PATH):
+	@mkdir -p obj/ 2> /dev/null
+
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@printf "\033[2K\r\033[0;32m[Compiling] : \t\033[0;32m\033[0m$<"
+	@clang++ $(FLAG) -c $< -o $@
 
 clean:
-								@echo "\033[0;32m[OK] \033[0m \033[0;33m Object files deleted:\033[0m"
-								@$(RM) *.o
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/.	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/..	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/...	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/.	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/..	\033[37m"
+	@sleep 0.1
+	@printf "\033[2K\r\033[31mDeleting $(NAME) srcs/...	\033[37m"
+	@sleep 0.1
+	@${RM} ${OBJ_PATH}
+	@printf "\33[2K\r \033[0;32m[OK] \033[0m \033[36m Deleted successfully!\n\033[0m"
 
-fclean:							clean
-								@echo "\033[0;32m[OK] \033[0m \033[0;33m Object files  + exedeleted:\033[0m"
-								@$(RM) $(NAME)
+fclean: clean
+	@${RM} ${NAME}
 
-re:								fclean all
+re: fclean all
 
-.PHONY: 						clean fclean
-
+.PHONY: clean fclean

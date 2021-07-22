@@ -17,7 +17,7 @@ Base * generate(void)
 		return new BaseC;
 }
 
-void identify_from_pointer(Base * p)
+void identify(Base * p)
 {
 	if (dynamic_cast<BaseA *>(p))
 		std::cout << "A" << std::endl;
@@ -27,7 +27,7 @@ void identify_from_pointer(Base * p)
 		std::cout << "C" << std::endl;
 }
 
-void identify_from_reference( Base & p)
+void identify( Base & p)
 {
 	if (dynamic_cast<BaseA *>(&p))
 		std::cout << "A" << std::endl;
@@ -51,23 +51,23 @@ int main()
 	Base *prand = generate();
 
 	std::cout << "Type de pa" << std::endl << "par ptr = ";
-	identify_from_pointer(pa);
+	identify(pa);
 	std::cout << "par ref = ";
-	identify_from_reference(*pa);
+	identify(*pa);
 
 	std::cout << std::endl << "Type de pb" << std::endl << "par ptr = ";
-	identify_from_pointer(pb);
+	identify(pb);
 	std::cout << "par ref = ";
-	identify_from_reference(*pb);
+	identify(*pb);
 
 	std::cout << std::endl << "Type de pc" << std::endl << "par ptr = ";
-	identify_from_pointer(pc);
+	identify(pc);
 	std::cout << "par ref = ";
-	identify_from_reference(*pc);
+	identify(*pc);
 
 	std::cout << std::endl << "Type de prand" << std::endl << "par ptr = ";
-	identify_from_pointer(prand);
+	identify(prand);
 	std::cout << "par ref = ";
-	identify_from_reference(*prand);
+	identify(*prand);
 	delete prand;
 }
